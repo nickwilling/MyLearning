@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<script src="node_modules/jquery/dist/jquery.js"></script>
+	<script>
+		// ;['abc', 'd', 'efg'].forEach(function  (item, index) {
+		// 	console.log(item)
+		// 	console.log(index)
+		// })
+
+		// $.each(['abc', 'd', 'efg'], function (index, item) {
+		// 	console.log(index)
+		// 	console.log(item)
+		// })
+
+		// console.log($('div'))
+		// $('div').each(function (index, item) {
+		// 	console.log(item)
+		// })
+
+		;[].slice.call($('div')).forEach(function (item, index) {
+			console.log(item)
+		})
+	</script>>
+</body>
+</html>
+
+

@@ -1,0 +1,16 @@
+{
+  "name": "code",
+  "version": "0.0.1",
+  "description": "这是一个测试项目",
+  "main": "main.js",
+  "dependencies": {
+    "art-template": "^4.13.2",
+    "jquery": "^3.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "wwl",
+  "license": "ISC"
+}

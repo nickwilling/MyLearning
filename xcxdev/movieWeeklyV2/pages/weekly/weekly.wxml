@@ -1,0 +1,32 @@
+<view class="" >
+  <!-- 列表/循环渲染 wx:for,使用item这个内置的循环控制变量来绑定输出，index为内置的数组下标 -->
+  <!-- 轮播图 -->
+  <!-- 希望幻灯片的前一页和后一页都露出一点来 previous-margin；next-margin -->
+  <swiper class="movie-swiper" indicator-dots='true'
+   previous-margin="50rpx" next-margin="50rpx"
+   current="{{currentIndex}}">
+     <swiper-item class="movie" wx:for="{{weeklyMovieList}}">
+        <view class="container movie-card"> 
+        <image class="movie-image" src="{{item.imagePath}}"></image>
+            <text>第{{index+1}}周：{{item.name}}</text>
+            <text style="margin: 0 40rpx">点评：{{item.comment}}</text>
+            <!-- 双大括号来进行count的数据绑定 -->
+            <!-- score使用if-else判断的绑定 -->
+            <!-- <text>{{(score>=60)?"及格":"不及格"}}</text> -->
+
+            <!-- 条件渲染和hidden的区别是条件渲染不满足时不会被渲染，而hidden一定要渲染的 -->
+            <!-- 条件渲染：wx：if 根据isHighlyRecommend是否为True来决定是否渲染生成 -->
+            <text wx:if="{{item.isHighlyRecommended}}" style="font-size:16px; color:red;">强烈推荐</text>
+            <!-- 与hidden的区别,用hidden实现同样功能 -->
+            <!-- <text hidden="{{!thisWeekMovie.isHighlyRecommended}}" style="font-size:16px; color:red;">强烈推荐</text> -->
+            <!-- 要给text的tab（点击事件）绑定一个事件处理函数 -->
+            <text bindtap='f0' wx:if="{{index < weeklyMovieList.length - 1}}" class='return-button'>返回本周</text> <!-- 放置在右上角-->
+        </view>
+  </swiper-item>
+  </swiper>
+  
+  <!-- 更新数据，小程序并没有提供类似DOM的JS API来直接更新视图 -->
+  <!-- this.setData()方法-更新数据并让框架自动更新相关视图 -->
+  <text>{{count}}</text>
+  <button bindtap="f1">count+1</button>
+</view>

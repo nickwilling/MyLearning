@@ -1,0 +1,13 @@
+<view class="container">
+  <image class="about-banner" src="../../images/simba.jpg"></image>
+  <text style="font-weight: bold; font-size: 60rpx;">电影周周看</text>
+  <!-- <text>只能包含纯文本，<navigator>元素被忽略了 -->
+  <!-- 如果页面被设置成tabBar对应了，那么1.页面跳转的时候2.tabBar也要跟着切换，需将open-type='switchTab' -->
+  <view><!--<navigator>是块元素，实现重定向，相当于h5中的<a>标签-->
+    <text>我</text><navigator style="display:inline;" url="/pages/weekly/weekly" open-type="switchTab"
+    class="nav-default" hover-class="nav-hover" >每周推荐</navigator><text>一部好片</text>
+  </view>
+  <text>我的微博：weibo.com/simbasong</text>
+</view>
+
+

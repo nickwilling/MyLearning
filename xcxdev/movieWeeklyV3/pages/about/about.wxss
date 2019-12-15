@@ -1,0 +1,26 @@
+.container { 
+  background-color: #eee;
+  height: 100vh;
+
+  /* display:flex; 弹性盒子布局 */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* 元素大小适配不同宽度屏幕 */
+/* 小程序规定，所有设备的屏幕宽高均为750rpx */
+.about-banner {
+  width: 375rpx;
+  height: 375rpx;
+  border-radius: 50%;
+}
+
+.nav-default {
+  color:blue;
+}
+
+.nav-hover {
+  color:red;
+}

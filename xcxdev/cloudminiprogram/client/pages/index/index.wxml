@@ -1,0 +1,5 @@
+<button bindtap="query">数组查询</button>
+<button bindtap="add">新增地点</button>
+<button bindtap="queryLoc">地点查询</button>
+<button bindtap="onClick">获取文件临时路径</button>
+<image src="cloud://wwl.7777-wwl-1300755893/my-image.png"></image>
