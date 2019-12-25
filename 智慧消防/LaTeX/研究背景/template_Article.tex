@@ -1,0 +1,33 @@
+\documentclass{ctexart}
+
+\bibliographystyle{plain}
+
+%opening
+\title{Smart Fire}
+\author{Weilin Wu}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Mark A. Finney1在\cite{finney_overview_2006}中介绍了野外火灾行为建模软件FlamMap，
+FlamMap可被用于描述在恒定环境条件下的火灾行为，FlamMap会分析作为输入的8个包含燃料和地形的GIS栅格主题的景观文件以输出火灾的描述，它可以以图片的形式输出火焰强度、传播向量以展示火焰的传播速度和最大的速度传播方向等；对于森林火灾的建模是非常友好的，但是不适用于城市火灾的建模。
+
+在烟雾检测的研究方面，H.Maruta\cite{Hidenori_2009}结合了烟雾的纹理特性和时间序列特性来检测开放区域的烟雾情况。
+
+K.MUHAMMAD \cite{K.Muhammad_2018}使用DL方法，通过对 Google Net 的微调，实现图像特征的自动提取以实现火灾的探测，在数据集的泛化上也有比较好的表现。
+
+基于图像处理的火灾探测系统通常通过检测火焰和烟雾来判断是否发生了火灾，大多数的火灾探测算法都采用了对火焰和烟雾的特征(e.g.颜色、与其背景的对比、闪烁特性)像素级的分析\cite{MillanAn}。
+
+Firebird \cite{madaio_firebird:_2016}利用8种来源的数据集提取出有关火灾风险的动态和静态属性并使用SVM模型计算火灾风险分数以预测火灾风险，并对各风险属性进行权重分配以确定风险检查的优先顺序。在次此工作中，使用的动态属性的时间跨度很大，与时间有关系的属性比如说建筑物使用年限、上一次的检查时间都不是实时的；但是他们提取的静态属性对本文的研究具有参考意义。
+
+Andrew在\cite{andrew_multi-stage_2016}中，提出了一种基于低成本阵列的早期火灾探测算法
+感应系统，利用现成的气体传感器，灰尘颗粒和环境传感器并使用PNN作为分类器来预测早期火灾的燃烧源。
+
+\end{abstract}
+
+\section{}
+
+\bibliography{SmartFire}
+\end{document}

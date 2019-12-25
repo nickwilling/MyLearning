@@ -1,0 +1,206 @@
+\documentclass[UTF8]{ctexart}
+
+\usepackage{geometry}
+% 交叉引用
+\usepackage{hyperref}
+
+\usepackage{graphicx}
+
+\graphicspath{{../figures/}}%图片在当前目录下的figures目录
+% comma： 用逗号分隔多个引用； square：使用方括号； super：引用是上角标形式
+
+\geometry{a4paper, margin = 1in}
+
+\bibliographystyle{plain}
+
+\title{参考文献的使用}
+\author{测试}
+\date{\today}
+\begin{document}
+	    \maketitle
+	    
+	
+		All fire behavior calculations assume that fuel moisture, wind speed,
+		and wind direction are constant in time.\cite{finney_overview_2006}
+		
+		The model is inspired from GoogleNet architecture, considering its reasonable computational complexity and
+		suitability for the intended problem compared to other computationally expensive networks such as AlexNet.
+		To balance the effciency and accuracy, the model is fine-tuned considering the nature of the target problem
+		and fire data.\cite{K.Muhammad_2018}
+	    
+		\section{研究背景模板}
+		
+		For instance,
+		Chen et al. [6] investigated XXX for fire
+		detection. Since, their method considers XXX, hence, it fails to XXX. 
+		
+		Besides XXX 方法/模型，谁谁谁 explored XXX方法 for prediction of XXX. 
+		
+		A similar method is proposed by 谁谁谁 by investigating temporal and spatial
+		wavelet analysis, however, the excessive use of parameters by
+		this method limits its usefulness.
+		
+		Another method is presented
+		by 某某(Han and Lee [10]) by 通过什么途径【comparing the video frames and
+		their color features for flame detection in tunnels.】 
+	
+		Considering these limitations, [Borges
+		and Izquierdo [12]] attempted to 尝试做什么【detect fire】 using 使用什么方法【a multimodal
+		framework consisting of color, skewness, and roughness features
+		and Bayes classifier.】
+		
+		In continuation with 谁谁谁的工作 [Borges and Izquierdo [12] work],
+		什么什么方法[multi-resolution 2D wavelets combined with energy and
+		shape] are explored by Rafiee et al. [13]  为了尝试做什么【in an attempt to
+		reduce false warnings】, however, 【存在什么不足】 the false fire alarms still
+		remained significant due to movement of rigid body objects in
+		the scene.
+		
+		An improved version of this approach is presented
+		in [14] 【用什么方法代替什么方法 【using YUC instead of RGB color model】, 获得了更好的结果 providing
+		better results than [13].
+		
+		什么方法在哪篇文章里被提出了【 Another color based flame detection
+		method with speed 20 frames/sec is proposed in [15].】  这种结构使用了什么方法，在什么情况下获得了好效果（ This
+		scheme used SVM classifier to detect fire with good accuracy
+		at smaller distance.】 在什么情况下效果比较差【  The method showed poor performance
+		when fire is at larger distance or the amount of fire is comparatively
+		small.	】
+		
+		\section{总结上面的传统方法的研究}
+		还有进步的空间 【 Although, the method dominated
+		state-of-the-art flame detection algorithms, yet there is still space for improvement.】
+		
+		存在什么缺陷 【In addition, the false alarming rate
+		is still high and can be further reduced.】
+		
+		提出动机，开发这种方法是有需要的【 there is a need to develop fire detection
+		algorithms with less computational cost and false warnings,
+		and higher accuracy.】
+		
+		
+	    根据以上的动机，开展了什么样的研究 【 Considering the above motivation, we
+		extensively studied convolutional neural networks (CNNs)
+		for flame detection at early stages in CCTV surveillance
+		videos.】
+		
+		\section{提出论文的主要贡献}
+		The main contributions of this article are summarized
+		as follows:
+		
+		考虑到传统方法的局限性，【Considering the limitations of traditional handengineering
+		methods,】研究了什么 【 we  extensively studied deep learning
+		(DL) architectures for this problem】  提出了什么方法【 and propose a
+		cost-effective CNN framework for flame detection in
+		CCTV surveillance videos.】 这种方法相比传统方法有什么好处。【Our framework avoids the
+		tedious and time consuming process of feature engineering
+		and automatically learns rich features from raw fire
+		data.】
+		
+		受什么牛逼的技术启发，干了什么事情【 Inspired from transfer learning strategies, we trained
+		and fine-tuned a model with architecture similar to
+		GoogleNet [18] for fire detection,】 有什么成果 【 which successfully
+		dominated traditional fire detection schemes.】
+		
+		虽然比不过state-of-art，但是提出的方法在保证了准确率，和有比较低的计算复杂性的同时又在上述的Motivation的点里有比较好的性能【 The proposed framework balances the fire detection accuracy
+		and computational complexity as well as reduces the
+		number of false warnings compared to state-of-the-art fire
+		detection schemes.】 所以提出的模型更适合干什么。【 Hence, our scheme is more suitable for
+		early flame detection during surveillance to avoid huge
+		fire disasters.】
+		
+		\section{文章的组织架构}
+		The rest of the paper is organized as follows: In Section 2,
+		we present our proposed architecture for early flame detection
+		in surveillance videos. Experimental results and discussion
+		are given in Section 3. Conclusion and future directions
+		are given in Section 4.
+		
+		
+		\section{数据集相关}
+		The total
+		number of images used in experiments is 68457, out of
+		which【 其中 】 62690   frames are taken from Dataset1 and remaining【 剩下的 】
+		from other sources.
+		
+		\section{图表写法}
+		Figure 5 shows sample images from this dataset. 
+		
+		Table 1 shows the experimental results based on Dataset1 and its
+		comparison with other methods.
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\linewidth]{comparison.png}
+			\caption{Comparison with indifferent fire detection methods.}
+			\label{fig:}
+		\end{figure}
+	
+	\section{实验}
+	In Figure 7 (b),
+	the fire region in the image is 【 做了什么处理，比如加了噪音】 distorted and the 因此产生的图片【 resultant image】
+	is passed through our method.
+		
+		
+	\section{可能用到的句子}
+	In conventional fire
+	detection systems, sensors used to detect fires are heat
+	detectors and smoke detectors that have an important role in
+	fire detection process.\cite{Riyadi_2018}
+	
+	
+	
+	如果检测到了火焰就会发警报If the presence of flame is detected by system, the
+	system wil produce an alarm as an indicator.
+	
+	现在的火灾检测还是依靠传统方法和直觉，还没有现成的基于数据驱动的方法。However, AFRD's fire inspection practices relied on tradition and intuition, with no exist-ing data-driven process for prioritizing fire inspections or
+	identifying new properties requiring inspection. \cite{madaio_firebird:_2016}
+	
+	【 帮助其做出明智的决定 】 Firebird integrates and visualizes fire incidents, property information and risk scores to help AFRD make informed decisions about fire inspections.
+	
+	虽然城市火灾风险预测是很重要的，但是相比于其他风险预测，没有得到足够的关注。Risk prediction models have been widely used in many domains, including health care [15], student performance evaluation [16], and accounting fraud detection [18].However, urban fire risk prediction has received relatively less atten-
+	tion, despite its obvious importance.
+	
+	大多数有关数据驱动的火灾风险预测都定位在了森林火灾预测。Much of the prior work on data-driven fire risk prediction has targeted woodland and forest fires, such as in Italy  [17], Greece [14], and Portugal [9]。
+
+	The features they used, such as soil type and topography, are very different from the ones typically used in urban fire prediction like
+	construction material and property usage type.
+	
+	17【 A  KDD based multicriteria decision making model for
+	re risk evaluation. 】
+	
+	14 【 A decision support system applying an
+	integrated fuzzy model for long-term forest re risk
+	estimation.】 
+	
+	9【	Spatial prediction of fire ignition
+	probabilities: comparing logistic regression and neural
+	networks. 】
+	
+	
+	现在在属性或建筑级别的火灾风险预测的相关研究还非常少。There is limited work on predicting fire risk at the property or building level.
+	
+	大多数火灾始于初期，并进一步发展到闷烧，燃烧和火灾阶段。Most fires start from an incipient stage and develop further to smouldering, flaming and fire stages.\cite{andrew_multi-stage_2016}
+	
+	在火灾的初期和闷烧阶段火焰和烟雾还比较少，等到燃烧和火灾阶段，火势更加猛烈，火焰和烟雾程度更深，并散发极高的热量。\cite{andrew_multi-stage_2016}
+	
+	火灾数据分析最常见的方法是聚类和分类算法。The most common methods used are related to clustering techniques and classification algorithms.
+	
+	检测初期火灾阶段的传感器需要被放置在离地面2.1米高处(天花板)，因为实验结果表明\cite{andrew_multi-stage_2016}，火灾初起产生的气体会首先充满整个房间的顶部，由于火灾产生的气体的密度要比周围空气轻。
+	
+	传感器采集频率：For realisation of a wireless sensing IAQ system, the data of the low cost system is sampled at the sampling rate of 10 sample/min [15]. The data has been recorded for 15 min each time。
+	
+	火灾的主要死伤原因就是有毒气体的吸入。\cite{molyneux2014correlation}UK fire statistics [7] show that the main cause of death, and the main cause of injury, in fires arises from the inhalation of toxic effluents.【Fire Statistics Great Britain 2011 to 2012 - Data on incidents attended by fire and rescue services across Great Britain, Department for Communities and Local Government, UK.】
+	
+	CO对人体产生的影响使用以(\%COHb)表示的吸入剂量来计算。在达到20\%COHb的时候就会对人体产生影响；到达30-40\%COHb 的时候会使人失去意识；而超过50\%COHb时就会致死。如果以吸入浓度来计算的话，最小的致人失去意识的CO浓度是暴露在 200 ppm的CO浓度下6小时(30\% COHb)，然而在火灾中，CO的浓度通常会在1000-10000ppm,甚至更高，在几分钟内就会使人丧失行动能力。\cite{molyneux2014correlation}  The effects of CO depend upon the dose inhaled in terms of \%COHb. Effects are
+	minimal up to approximately 20\%COHb, with incapacitation (loss of consciousness) occurring at 30-
+	40\%COHb and death above ~50\%COHb. The minimum inhaled concentration capable of causing loss of
+	consciousness is approximately 200 ppm after around 6 hours exposure (at 30\% COHb). Exposure to
+	concentrations of 1 000-10 000 ppm CO is common in fires, and may cause incapacitation within a few
+	minutes [10].
+	
+	ISO 13571[6] considers the four major hazards from fire
+	which may prevent escape (toxic gases, irritant gases, heat and smoke obscuration). 【 ISO 13571:2012 Life-threatening components of fire – Guidelines for the estimation of time
+	available for escape using fire data.】
+	\bibliography{SmartFire}
+\end{document}

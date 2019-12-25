@@ -1,0 +1,33 @@
+\begin{thebibliography}{1}
+
+\bibitem{finney_overview_2006}
+Mark~A. Finney.
+\newblock An overview of {FlamMap} fire modeling capabilities.
+\newblock 041.
+
+\bibitem{Hidenori_2009}
+{Hidenori Maruta}, {Yasuharu Kato}, {Akihiro Nakamura}, and {Fujio Kurokawa}.
+\newblock Smoke detection in open areas using its texture features and time
+  series properties.
+\newblock In {\em 2009 IEEE International Symposium on Industrial Electronics},
+  pages 1904--1908, July 2009.
+
+\bibitem{madaio_firebird:_2016}
+Michael Madaio, Shang-Tse Chen, Oliver~L. Haimson, Wenwen Zhang, Xiang Cheng,
+  Matthew Hinds-Aldrich, Duen~Horng Chau, and Bistra Dilkina.
+\newblock Firebird: Predicting fire risk and prioritizing fire inspections in
+  atlanta.
+
+\bibitem{MillanAn}
+Leonardo Millan-Garcia, Gabriel Sanchez-Perez, Mariko Nakano, Karina
+  Toscano-Medina, Hector Perez-Meana, and Luis Rojas-Cardenas.
+\newblock An early fire detection algorithm using ip cameras.
+\newblock {\em Sensors}, 12(12):5670--5686.
+
+\bibitem{K.Muhammad_2018}
+K.~{Muhammad}, J.~{Ahmad}, I.~{Mehmood}, S.~{Rho}, and S.~W. {Baik}.
+\newblock Convolutional neural networks based fire detection in surveillance
+  videos.
+\newblock {\em IEEE Access}, 6:18174--18183, 2018.
+
+\end{thebibliography}

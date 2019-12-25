@@ -1,0 +1,38 @@
+\begin{thebibliography}{1}
+
+\bibitem{andrew_multi-stage_2016}
+Allan~Melvin Andrew, Ammar Zakaria, Shaharil~Mad Saad, and Ali Yeon~Md Shakaff.
+\newblock Multi-stage feature selection based intelligent classifier for
+  classification of incipient stage fire in building.
+\newblock 16(1):31.
+
+\bibitem{finney_overview_2006}
+Mark~A. Finney.
+\newblock An overview of {FlamMap} fire modeling capabilities.
+\newblock 041.
+
+\bibitem{madaio_firebird:_2016}
+Michael Madaio, Shang-Tse Chen, Oliver~L. Haimson, Wenwen Zhang, Xiang Cheng,
+  Matthew Hinds-Aldrich, Duen~Horng Chau, and Bistra Dilkina.
+\newblock Firebird: Predicting fire risk and prioritizing fire inspections in
+  atlanta.
+
+\bibitem{molyneux2014correlation}
+S~Molyneux, ANNA~A Stec, and T~RICHARD Hull.
+\newblock The correlation between carbon monoxide and hydrogen cyanide in fire
+  effluents of flame retarded polymers.
+\newblock {\em Fire Safety Science}, 11:389--403, 2014.
+
+\bibitem{K.Muhammad_2018}
+K.~{Muhammad}, J.~{Ahmad}, I.~{Mehmood}, S.~{Rho}, and S.~W. {Baik}.
+\newblock Convolutional neural networks based fire detection in surveillance
+  videos.
+\newblock {\em IEEE Access}, 6:18174--18183, 2018.
+
+\bibitem{Riyadi_2018}
+Dedy~Slamet Riyadi and Siti Aisyah.
+\newblock Vision based flame detection system for surveillance camera.
+\newblock In {\em 2018 International Conference on Applied Engineering (ICAE)},
+  pages 1--6. IEEE, 2018.
+
+\end{thebibliography}

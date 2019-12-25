@@ -18,7 +18,8 @@ Page({
     })
      // 发起请求API，wx.request发起HTTP request，调用Server端一个API来获取数据或者操作数据，与ajax类似
     wx.request({
-      url: "https://douban.uieee.com/v2/movie/subject/" + options.id,
+      // url: "https://douban.uieee.com/v2/movie/subject/" + options.id,
+      url:"https://restapi.amap.com/v3/traffic/status/rectangle?extensions=all&rectangle=116.351147,39.966309;116.357134,39.968727&key=cff1f2ddead564b82ef355e240874029",
       //https://baidu.com 不在以下 request 合法域名列表中,因为小程序对每一个网络请求指定的url对应的服务器域名都必须在小程序后台中进行登记配置
       header: {
         "content-type": "json"
@@ -28,24 +29,24 @@ Page({
       success: function(response) {
         console.log(response)
         if(response.statusCode==200){
-            that.setData({
-              movie: response.data
-            })
-            wx.setNavigationBarTitle({
-              title: response.data.rating.average + "分： " +
-              response.data.title,
-            })
-            wx.hideNavigationBarLoading()
+            // that.setData({
+            //   movie: response.data
+            // })
+            // wx.setNavigationBarTitle({
+            //   title: response.data.rating.average + "分： " +
+            //   response.data.title,
+            // })
+            // wx.hideNavigationBarLoading()
         }
-      }
+      },
 
       // // 当调用失败的时候
       // fail: function() {
 
       // },
       // // 无论成功还是失败都会被调用
-      // complete: function() {
-
+      // complete: function(res) {
+      //   console.log("11111"+res)
       // }
 
 
