@@ -28,11 +28,27 @@ git commit -m "提交描述"：将暂存区的文件提交到仓库
 ### git remote -v
 查看远程分支
 
-###
-git pull --rebase origin master
+### git pull --rebase origin master
 
 ## Github上创建的Git仓库与本地仓库关联
 - git remote add origin https://github.com/Jay778/Night.git
 
+##  git branch --set-upstream-to=origin/<branch> master
+
+If you wish to set tracking information for this branch you can do so with:
+
+
 ## 远程仓库更改，本地仓库保持更新
 - git pull origin master
+
+ 
+
+```shell
+echo "# Document" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:nickwilling/Document.git
+git push -u origin master
+```
+

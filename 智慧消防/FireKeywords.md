@@ -31,3 +31,16 @@
 - Fire Toxicity
 
 - The stages of fire growth
+- sample data 
+  - In pattern matching studies, sample data are needed to train the classifier.
+
+- Surface-Area-to-Volume Ratio
+  -   Surface-Area-to-Volume Ratio – The ratio of the surface area of a fuel particle (in square-ft) to
+its volume (in cubic-ft). The “finer” the fuel particle, the higher the ratio; for example, for grass
+this ratio ranges above 2,000; while for a ½ inch diameter stick it is 109.
+
+- Rothermel火灾蔓延模型(林火蔓延模型)
+- Fuel  Type
+  - NFDRS选取了具有代表性的 20个可燃物类型（表 1），每个类型都有一套相应的物理参数，包括可燃物表面积体积比、可燃物载量、可燃物床层高度、熄灭含水率、发热量等，从而建立
+20个可燃物模型，为火蔓延模型提供火行为参数。
+- ![20191227092035.png](https://i.loli.net/2019/12/27/Wc97KtSeyQNILEh.png)
