@@ -48,6 +48,7 @@ this ratio ranges above 2,000; while for a ½ inch diameter stick it is 109.
 
 - 火灾设计
   ![](https://upload-images.jianshu.io/upload_images/20287653-ec7eff9eeaa08313.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
   火灾依次经历了阴燃阶段、增长阶段、充分发展阶段、衰退阶段直至最终熄灭。
   **对火灾各个时期热释放速率的变化情况进行设定, 这一过程称为设计火灾。**
 
@@ -81,3 +82,16 @@ $Q = \alpha t^2$，其中$\alpha$为火灾增长系数,$kW/s^2$;t为火灾发展
 速率考虑。
 ![](https://upload-images.jianshu.io/upload_images/20287653-c7a4cafb17f2db37.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+- 通风井（地下建筑的）
+
+    为了保证安全，在工程设计中，根据需要设置通风和排气通道。通风井就是排气设施中的一种。
+    
+    参考资料：百度百科
+
+- 通风管道
+  
+    通风管道是工业与民用建筑的通风与空调工程用金属或复合管道，是为了使空气流通，降低有害气体浓度的一种市政基础设施
+
+    参考资料：建设部关于发布行业标准《通风管道技术规程》的公告 ．国家建设部
+
+    
