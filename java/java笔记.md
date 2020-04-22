@@ -1,3 +1,81 @@
+## Idea如何看接口的实现类
+ApplicationContext ac = new ClassPathXmlApplicationContext("bean.xml")
+
+点ApplicationContext右键--->Diagrams-->show diagram会得到这个接口的继承关系，此时再右键这个接口-->show implementations就可以找到这个接口的实现类了
+
+## Java读取文件的路径问题
+1. 绝对路径：d:/xxx/xxx.xml XXX
+2. 相对路径：src/java/main/xxx.xml XXX [因为一旦编译以后就没有这些文件了，也就读取不到了]
+3. 使用类加载器，他只能读取类路径(编译后的路径)的配置文件
+4. 使用ServletContext对象的getRealPath()
+
+## 实体类(Entity)、POJO和JavaBean
+JavaBean：是一种JAVA语言写成的可重用组件。JavaBean符合一定规范编写的Java类，不是一种技术，而是一种规范。
+1. 所有属性为private。
+2. 这个类必须有一个公共的缺省构造函数。即是提供无参数的构造器。
+3. 这个类的属性使用getter和setter来访问，其他方法遵从标准命名规范。
+4. 这个类应是可序列化的。实现serializable接口。
+5. POJO严格地遵守简单对象的概念，而一些JavaBean中往往会封装一些简单逻辑。
+
+**POJO （Plain Ordinary Java Object）简单的Java对象，实际就是普通JavaBeans**
+
+POJO类中有属性和get、set方法，但是没有业务逻辑
+
+**实体类和数据库对应：**
+- 实体类名，尽量和数据库中的表名一一对应
+- 实体类应该实现java.io.Serializable接口
+- 实体类中的属性对应数据库表中的字段，相关的命名最好也一一对应
+- 实体类内方法主要有，setter、getter方法，用于设置、获取数据
+- 实体类属性一般为private类型，方法为public类型
+- 实体类应该有，无参、有参构造方法
+## 类和对象
+**类（class）和对象(object)** 
+
+Java类和对象的关系是：对象是类实例化出来的,对象中含有类的属性,类是对象的抽象。
+
+比如“人类”就是一个类，那么具体的某个人“张三”就是“人类”这个类的对象，而“名字、年龄”等信息就是对象的属性，人的动作比如“吃饭、穿衣”等就是对象的方法。
+
+总之类就是有相同特征的事物的集合，而对象就是类的一个回具体实例。
+
+## 抽象类
+- 抽象类使用 abstract 关键字修饰
+- 有抽象方法的类一定是抽象类
+- 抽象类不能实例化对象
+- 抽象类的其它功能依然存在，成员变量、成员方法和构造方法的访问方式和普通类一样。
+- 由于抽象类不能实例化对象，所以抽象类必须被继承，才能被使用。
+- 在Java中抽象类表示的是一种**继承关系**，**一个类只能继承一个抽象类**，而一个类却可以实现多个接口。
+```java
+public class Solution {
+    public static void main(String[] args) {
+        A a= new B(); // 抽象类 A 不能实例化A的对象，但是可以实例化子类B的对象
+        a.c(); //这里调用的是重写的B中的c方法，子类重写的方法会覆盖父类
+    }
+}
+
+abstract class A { //抽象类 A 中可以没有抽象方法
+    int a = 0;
+    int b = 1;
+    void a(){}
+    void b(){
+        System.out.println("sss");
+    }
+    abstract void c(); //抽象方法就是没有实现的方法，后面不能加大括号
+}
+
+class B extends A {
+
+    @Override
+    void c() {
+        System.out.println(a+b);
+    }
+}
+```
+
+### 多态的实现方式
+- 方法重载（指的是在一个类中有若干个方法名相同，但参数列表不同的情况，返回值可以相同也可以不同）
+- 方法重写 (子类对父类。但是子类方法的参数列表和返回值类型，必须与父类方法一致！)
+- 接口 (接口定义方法，方法的实现在继承接口的具体类中定义，也是对同一行为的不同表现形式。)
+- 抽象类
 ## 创建一个对象的过程
     1. 分配对象空间， 并将对象成员变量初始化为0或空
     2. 执行属性值的显式初始化

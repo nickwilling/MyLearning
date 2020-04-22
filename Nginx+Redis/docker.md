@@ -177,13 +177,27 @@ To generate this message, Docker took the following steps:
 
 使用镜像centos:latest以后台启动模式启动一个容器
 
-`docker run -d centos`
+`docker run -d centos \\后面跟命令`
 
 问题：使用`docker pa -a` 进行查看，发现容器已经退出
 
-很重要的要说明的一点：**Docker容器后台运行，就必须要有一个前台进程**
+`docker run -it centos ` \\-it会给容器分配一个伪终端，效果与
 
-容器运行的命令如果不是那些**一直挂起的命令（比如运行top，tail）**，就是会自动退出的。
+`docker run -it centos /bin/bash` 一致，这里的\bin\bash就是容器运行容器里的 */bin/bash* 程序，也就是运行终端
+
+很重要的要说明的一点：**Docker容器后台运行，就必须要有一个前台进程**
+```shell
+wwl@wuweilins-MBP ~ % docker run -it --name mycentos centos tail
+| \\这里容器不退出，一直运行
+```
+
+容器运行的命令如果不是那些**一直挂起的命令（比如运行top，tail）**，就是会自动退出的。比如下面运行的就是pwd就不是一直挂起的命令，运行完容器就退出了
+```shell
+wwl@wuweilins-MBP ~ % docker run -it --name mycentos centos pwd 
+/
+wwl@wuweilins-MBP ~ % 
+
+```
 
 这是docker的机制问题
 
@@ -451,7 +465,7 @@ drwxr-xr-x   1 root root   41 Nov 18 00:00 var
 ## 安装mysql
 
 ```shell
-docker run -p 12345:3306 --name mysql \
+docker run -p 3306:3306 --name mysql \
 -v /wwl/mysql/conf:/etc/mysql/conf.d \
 -v /wwl/mysql/logs:/logs \
 -v /wwl/mysql/data:/var/lib/mysql \
@@ -469,7 +483,8 @@ docker run -p 6379:6379 \
 -v /wwl/myredis/conf/redis.conf:/usr/local/etc/redis/redis.conf \
 -d redis \
 redis-server /usr/local/etc/redis/redis.conf \
---appendonly yes  //持久化 aof文件
+--appendonly yes  //持久化 aof文件，--后面的都是配置文件的设置
+--requirepass "12345678" //设置密码
 ```
 
 - 在主机`/wwl/myredis/conf/redis.conf`目录下新建redis.conf文件
