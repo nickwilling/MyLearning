@@ -425,3 +425,18 @@ SpringIOC 容器管理一个或者多个bean，这些bean都需要在@Configurat
 @NoArgsConstructor//提供无参数的构造函数
 ```
 
+## @RestController(@ResponseBody+Controller)
+```java
+//这个类的所有方法返回的数据直接写成给浏览器的response对象，（如果返回的是对象转为json数据）
+// @ResponseBody
+// @Controller
+@RestController
+public class HelloController {
+
+    @RequestMapping("/hello")
+    public String Hello() {
+        return "HelloWorld";
+    }
+}
+
+```
