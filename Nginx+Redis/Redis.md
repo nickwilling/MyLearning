@@ -26,7 +26,7 @@ Redis Cluster是Redis分布式集群解决方案，主要解决Redis分布式方
 3. 只有分布式架构能满足要求
 
 Redis-Cluster 至少要3(Master)+3(Slave)才能建集群。Redis-Cluster采用无中心结构（Master-Slave中Master是中心节点），每个节点都和其他所有节点连接。其中主节点提供读写操作，从节点作为备用节点，不提供请求，只作为故障转移使用。【**检测失效跟计算机网络差不多，半数以上节点检测失效才生效**】
-  
+
 ## Redis优点
 ### 原子性
 原子性是数据库的事务中的特性。在数据库事务的情景下，原子性指的是：一个事务（transaction）中的所有操作，要么全部完成，要么全部不完成，不会结束在中间某个环节。
@@ -228,7 +228,7 @@ requirepass password -- 设置数据库密码（保证服务安全/有些情况�
 > Redis 采用的是单进程多线程的模式。当redis.conf 选项中的daemonize设置成 yes 时， 代表开启守护进程模式。在该模式下，redis 会在后台运行， 并将进程 pid 号写入至 redis.conf 选项 pidfile 设置的文件中， 此时 redis 将一直运行， 除非手动 kill 该进程。 但当 daemonize 选项设置成 no 时， 当前界面将进入 redis 的命令行界面， exit强制退出或者关闭连接工具（putty Xshell等）都会导致redis进程退出。
 > 
 >服务端开发的大部分应用都是采用后台运行的模式
- 
+
  ## Redis客户端
 - Jedis
 - Lettuce
@@ -678,4 +678,83 @@ redisTemplate.opsForHash().put(Student.getKeyName(),id,s);
     private ValueOperations<String, String> string;
 ```
 
+## Redis事务
+
+**Redis 的事务和数据库的事务有所不同，不是为了保证事务要么全都执行成功要么全都失败（事务的原子性）；而是为了保证事务是按顺序执行的。**
+
+Redis 事务可以一次执行多个命令，（按顺序串行化执行，执行中不会被其他命令插入，不许加塞），并且带有以下两个重要的保证：【批量操作在发送 EXEC 命令前被放到任务缓存；收到 EXEC 命令后进入事务执行，事务中任意命令执行失败，其余命令依然被执行；事务执行过程中，其他客户端提交的命令请求不会插入到事务执行命令序列中。】
+
+1. Redis会将一个事务中的所有命令序列化，然后按顺序执行
+2. 执行中不会被其他命令插入，不许出现加塞行为
+
+ 一个事务从开始到执行会经历以下三个阶段：
+
+- 开始事务
+- 命令入队
+- 执行事务
+
+### 事务的错误处理
+
+- 如果**执行的某个命令**报出了错误，则只有报错的命令不会被执行，而其他的命令都会执行，不会回滚。（事务执行成功，只是其中的一个命令执行失败）
+
+<img src="/Volumes/MAC文件/MyLearning/Nginx+Redis/images/image-20200428105433989.png" alt="image-20200428105433989" style="zoom:50%;" />
+
+- **队列中的某个命令**出现了报告错误，执行时整个的所有队列都会被取消回滚 （由于之前的错误，事务执行失败）
+
+  <img src="/Volumes/MAC文件/MyLearning/Nginx+Redis/images/image-20200428105809996.png" alt="image-20200428105809996" style="zoom:50%;" />
+
+### Redis事务命令
+
+1. DISCARD：取消事务，放弃执行事务块内的所有命令
+2. EXEC：执行所有事务块内的命令
+3. MULTI：标记一个事务块的开始
+4. UNWATCH：取消WATCH命令对key的监视
+5. WATCH key [key...]：监视一个（或多个）key，如果在事务执行之前这个/这些 key 被其他命令所改动，事务将被打断
+
+## Redis 持久化
+
+### Redis 数据淘汰策略
+
+当内存不足时，Redis会根据配置的缓存策略淘汰部分 keys，以保证写入成功。当无淘汰策略或没有找到适合淘汰的key时，Redis会直接返回 out of memory错误。
+
+redis提供 6 种数据淘汰策略：
+
+1. volatile-lru：[Least Recently Used] 从已设置过期时间的数据集中挑选**最近最少使用**的数据淘汰
+2. volatile-lfu：[Least Frequently Used] 从已设置过期的 keys中，删除一段时间内使用**频率最少**的
+3. volatile-ttl：从已设置过期的key中挑选最近将要过期的数据淘汰
+4. volatile-random：从已设置过期的key中随机删除
+5. allkeys-lru：
+6. allkeys-lfu：
+7. allkeys-random
+8. no-enviction（驱逐）：不淘汰
+
+### Redis 持久化机制
+
+**1、RDB**：是redis的默认持久化机制。RDB相当于快照，保存的是一种状态。
+
+几十G的数据 ----》 几KB的快照【**以快照形式写入二进制文件**】
+
+**优点**：
+
+- 快照保存数据极快、还原数据极快
+
+- 适用于灾难备份
+
+缺点：小内存机器不适合使用，RDB机制符合要求就会照快照
+
+快照条件：文件配置的时间段内，操作达到指定数量的key，就会将redis的数据存到名为rdb的文件中以免数据丢失
+
+
+
+**2、AOF：** AppendOnlyFile
+
+由于快照是一定间隔时间照的，宕机之后最后一次快照后的数据会丢失
+
+AOF比快照方式有更好的持久化性，是由于在使用 aof 时，redis会将每一个收到的写命令都通过 write 函数追加到文件中（默认是 appendonly.aof）。当redis重启时会通过重新执行文件中保存的写命令来在内存中重建整个数据库
+
+问题：持久化的文件会变得越来越大。
+
+
+
+## Redis缓存与数据库一致性问题
 
