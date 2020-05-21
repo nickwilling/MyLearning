@@ -1,3 +1,7 @@
+![image-20200515120001643](C:\Users\wwl\Documents\学习\MyLearning\java\images\image-20200515120001643.png)
+
+Java NIO系统的核心在于：通道（Channel）和缓冲区（Buffer）。**通道表示打开到IO设备（例如：文件、套接字）的连接。**若需要使用NIO系统，需要获取用于连接IO设备的通道已经用于容纳数据的缓冲区。然后操作缓冲区，对数据进行处理。
+
 ## BIO NIO AIO
 
 BIO
@@ -128,7 +132,7 @@ BlockingIO
 
 ![image-20200424235003595](C:\Users\wwl\Documents\学习\MyLearning\java\images\image-20200424235003595.png)
 
-### BIO的重要组成部分
+### NIO的重要组成部分
 
 #### Buffer
 
